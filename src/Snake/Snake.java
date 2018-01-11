@@ -25,10 +25,12 @@ public class Snake {
     }
 
     /**
-     * Extends the snake by adding one extra block at the back
+     * Extends the snake by adding three extra blocks at the back
      */
     public void extendSnake() {
-        blocks.add(new Block(blockSize, blocks.get(blocks.size() - 1).getX(), blocks.get(blocks.size() - 1).getY(), bodyColor));
+        for (int i = 0; i < 3; i++) {
+            blocks.add(new Block(blockSize, blocks.get(blocks.size() - 1).getX(), blocks.get(blocks.size() - 1).getY(), bodyColor));
+        }
     }
 
     /**

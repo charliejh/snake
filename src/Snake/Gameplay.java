@@ -32,7 +32,7 @@ public class Gameplay extends JComponent implements KeyListener {
      * Starts the game
      */
     public void start() {
-        timer = new Timer(200, e -> update());
+        timer = new Timer(180, e -> update());
         timer.start();
     }
 
