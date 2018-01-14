@@ -9,7 +9,6 @@ import java.util.Random;
 public class Gameplay extends JComponent implements KeyListener {
 
     private Frame frame;
-    private Timer timer;
     private Snake snake;
     private Gem gem;
     private String nextMove = "UP";
@@ -32,7 +31,7 @@ public class Gameplay extends JComponent implements KeyListener {
      * Starts the game
      */
     public void start() {
-        timer = new Timer(180, e -> update());
+        Timer timer = new Timer(180, e -> update());
         timer.start();
     }
 
@@ -116,9 +115,7 @@ public class Gameplay extends JComponent implements KeyListener {
         int y = randomY.nextInt(20);
         boolean canMove = true;
         for (int i = 0; i < snake.getSize(); i++) {
-            if (snake.getBlock(i).getX() == x && snake.getBlock(i).getY() == y) {
-                canMove = false;
-            }
+            if (snake.getBlock(i).getX() == x && snake.getBlock(i).getY() == y) canMove = false;
         }
         if (!canMove) moveGem();
         else { gem.move(x, y); }
@@ -132,12 +129,8 @@ public class Gameplay extends JComponent implements KeyListener {
         drawScoreBoard(graphics);
         gem.draw(graphics);
         snake.draw(graphics);
-        if (gamePaused) {
-            drawPauseScreen(graphics, "Paused!", 290);
-        }
-        if (gameOver) {
-            drawPauseScreen(graphics, "Game Over!", 240);
-        }
+        if (gamePaused) drawPauseScreen(graphics, "Paused!", 290);
+        if (gameOver) drawPauseScreen(graphics, "Game Over!", 240);
     }
 
     /**
@@ -145,12 +138,8 @@ public class Gameplay extends JComponent implements KeyListener {
      */
     private void drawBackground(Graphics graphics) {
             graphics.setColor(Color.BLACK);
-            for (int i = 0; i < 840; i += 40) {
-                graphics.drawLine(0, i, 800, i);
-            }
-            for (int i = 0; i < 840; i += 40) {
-                graphics.drawLine(i, 0, i, 800);
-            }
+            for (int i = 0; i < 840; i += 40) graphics.drawLine(0, i, 800, i);
+            for (int i = 0; i < 840; i += 40) graphics.drawLine(i, 0, i, 800);
     }
 
     /**
@@ -219,9 +208,7 @@ public class Gameplay extends JComponent implements KeyListener {
             }
         }
         if (gamePaused) {
-            if (e.getKeyCode() == KeyEvent.VK_R) {
-                gamePaused = false;
-            }
+            if (e.getKeyCode() == KeyEvent.VK_R) gamePaused = false;
         }
     }
     @Override
