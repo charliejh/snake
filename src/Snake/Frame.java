@@ -15,4 +15,5 @@ public class Frame extends JFrame{
         getContentPane().setBackground(new Color(80,80,80));
         setResizable(false);
     }
+
 }
