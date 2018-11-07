@@ -26,6 +26,10 @@ public class Snake {
         snakeBodyParts.get(0).move(facedDirection);
     }
 
+    public void moveSnakeHead(int pX, int pY) {
+        snakeBodyParts.get(0).move(pX, pY);
+    }
+
     public void extendSnake() {
         snakeBodyParts.add(new Block(snakeBodyParts.get(snakeBodyParts.size() - 1).getX(), snakeBodyParts.get(snakeBodyParts.size() - 1).getY(), Constants.SNAKE_BODY_COLOUR));
     }
@@ -62,4 +66,9 @@ public class Snake {
     public Direction getFacedDirection() {
         return facedDirection;
     }
+
+    public Block getSnakeHead() {
+        return snakeBodyParts.get(0);
+    }
+
 }

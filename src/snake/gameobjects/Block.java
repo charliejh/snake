@@ -34,6 +34,11 @@ public class Block {
         }
     }
 
+    public void move(int pX, int pY) {
+        this.x = pX;
+        this.y = pY;
+    }
+
     public void moveToOtherBlock(Block block) {
         this.x = block.x;
         this.y = block.y;
