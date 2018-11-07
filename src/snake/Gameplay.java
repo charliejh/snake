@@ -103,7 +103,7 @@ public class Gameplay extends JComponent implements KeyListener {
     private void drawScoreBoard(Graphics graphics) {
         graphics.setColor(Color.white);
         graphics.setFont(new Font("Verdana", Font.PLAIN, 25));
-        graphics.drawString("snake", Constants.FRAME_SIZE * Constants.BLOCK_SIZE + 110, 40);
+        graphics.drawString("Snake", Constants.FRAME_SIZE * Constants.BLOCK_SIZE + 110, 40);
         graphics.drawString("By Charlie Harris", Constants.FRAME_SIZE * Constants.BLOCK_SIZE + 40, 80);
         graphics.drawString("Score: " + score, Constants.FRAME_SIZE * Constants.BLOCK_SIZE + 100, 140);
         graphics.setFont(new Font("Verdana", Font.PLAIN, 20));
